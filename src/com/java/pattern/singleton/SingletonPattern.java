@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * Created by Administrator on 2017/11/4.
- * Singleton:单例模式
+ * 设计模式一、Singleton:单例模式
  *
  * 应用场景：当需要保证类在内存中的对象唯一性，可以使用单例模式
  *           不想创建多个实例浪费资源，或者避免多个实例由于多次调用
