@@ -110,6 +110,7 @@ class ConcreteBuilder extends Builder{
  */
 class Director{
     private Builder builder;
+    //关联关系
     public Director(Builder builder){
         this.builder = builder;
     }
