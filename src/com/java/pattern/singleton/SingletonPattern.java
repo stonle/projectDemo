@@ -101,8 +101,8 @@ class LazySingleton2{
  *   和饿汉式类似，两者都是通过类装载机制来保证初始化实例
  *   的时候只有一个线程，从而避免线程安全问题，饿汉式的
  *   OuterSingleton，就会实例化，而静态内部类这种，
- *   OuterSingleton，不会立即实例化，调用getInstance方法，
- *   InnerSingletonHolder，从而完成OuterSingleton的实例化。
+ *   InnerSingletonHolder，不会立即实例化，调用getInstance方法，
+ *   从而完成InnerSingletonHolder的实例化。
  */
 class OuterSingleton{
     public OuterSingleton(){}
