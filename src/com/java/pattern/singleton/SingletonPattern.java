@@ -105,13 +105,13 @@ class LazySingleton2{
  *   从而完成InnerSingletonHolder的实例化。
  */
 class OuterSingleton{
-    public OuterSingleton(){}
+    private OuterSingleton(){}
     public static final OuterSingleton getInstance() {
         return InnerSingletonHolder.INSTANCE;
     }
-   private static class InnerSingletonHolder{
+    private static class InnerSingletonHolder{
        private static final OuterSingleton INSTANCE = new OuterSingleton();
-   }
+    }
 }
 
 /**
