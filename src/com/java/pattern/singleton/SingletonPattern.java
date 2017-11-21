@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ *  创建型模式：共5中
+ *      工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式
  * Created by Administrator on 2017/11/4.
  * 设计模式一、Singleton:单例模式
  *
@@ -128,6 +130,7 @@ enum  EeumSingleton{
     INSTANCE;
     private Singleton instance;
     EeumSingleton() {
+        //如果枚举量有伴随参数并且手动添加了构造器，那么将会解析成一个静态的代码块在类加载时对变量进行初始化
         instance = new Singleton();
         System.out.println("-----调用了构造方法------");
     }
