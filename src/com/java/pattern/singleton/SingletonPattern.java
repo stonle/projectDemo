@@ -20,9 +20,12 @@ import java.util.Map;
 public class SingletonPattern {
     public static void main(String[] args) {
         //只调用了一次构造方法
+   /*     System.out.println(EeumSingleton.INSTANCE.getInstance());
         System.out.println(EeumSingleton.INSTANCE.getInstance());
-        System.out.println(EeumSingleton.INSTANCE.getInstance());
-        System.out.println(EeumSingleton.INSTANCE.getInstance());
+        System.out.println(EeumSingleton.INSTANCE.getInstance());*/
+   // 证明是同一个对象，单例的
+        System.out.println(InstanceFactory.getInstance());
+        System.out.println(InstanceFactory.getInstance());
     }
 }
 /**
@@ -99,7 +102,6 @@ class LazySingleton2{
 
 /**
  *   静态内部类实现单例模式
- *
  *   和饿汉式类似，两者都是通过类装载机制来保证初始化实例
  *   的时候只有一个线程，从而避免线程安全问题，饿汉式的
  *   OuterSingleton，就会实例化，而静态内部类这种，
@@ -115,6 +117,21 @@ class OuterSingleton{
        private static final OuterSingleton INSTANCE = new OuterSingleton();
     }
 }
+
+class Instance{
+
+}
+
+// 基于类初始化的加载方案  ---懒汉式 （延迟加载）
+class InstanceFactory{
+    public static class InstanceHolder{
+        public static Instance instance = new Instance();
+    }
+    public static Instance getInstance(){
+       return InstanceHolder.instance;
+   }
+}
+
 
 /**
  * 枚举实现单例模式 ----- 推荐使用。
